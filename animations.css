@@ -3242,31 +3242,54 @@ button:active,
     margin-top: 48px;
 }
 
+.contact-embed-badge {
+    font-size: 0.76rem;
+    font-weight: 600;
+    font-family: var(--font-body);
+    color: #E9D5FF;
+    background: rgba(192, 132, 252, 0.12);
+    border: 1px solid rgba(192, 132, 252, 0.3);
+    padding: 3px 10px;
+    border-radius: 9999px;
+    margin-left: 8px;
+    display: inline-flex;
+    align-items: center;
+    vertical-align: middle;
+    letter-spacing: 0;
+    white-space: nowrap;
+}
+
 .contact-card {
     background: rgba(18, 18, 24, 0.75);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 24px;
-    padding: 28px 24px;
+    border: 1px solid rgba(192, 132, 252, 0.18);
+    border-radius: 22px;
+    padding: 22px 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 16px;
     text-decoration: none;
     backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
     cursor: pointer;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
 .contact-card-icon {
-    font-size: 1.6rem;
+    font-size: 1.35rem;
     width: 48px;
     height: 48px;
     border-radius: 16px;
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(192, 132, 252, 0.12);
+    border: 1px solid rgba(192, 132, 252, 0.32);
+    color: #C084FC;
+    box-shadow: 0 0 25px rgba(139, 92, 246, 0.3);
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .contact-card-info {
@@ -3286,10 +3309,14 @@ button:active,
 
 .card-heading {
     font-family: var(--font-heading);
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     font-weight: 700;
     color: #FAFAFA;
     margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 4px;
 }
 
 .card-subtext {
@@ -3304,27 +3331,23 @@ button:active,
     transition: transform 0.3s ease, color 0.3s ease;
 }
 
+.contact-card:hover {
+    border-color: rgba(192, 132, 252, 0.55);
+    background: rgba(24, 20, 32, 0.88);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 35px rgba(139, 92, 246, 0.28);
+    transform: translateY(-3px);
+}
+
+.contact-card:hover .contact-card-icon {
+    background: rgba(192, 132, 252, 0.25);
+    border-color: rgba(192, 132, 252, 0.6);
+    box-shadow: 0 0 35px rgba(139, 92, 246, 0.65);
+    transform: scale(1.08);
+}
+
 .contact-card:hover .card-arrow {
-    transform: translateX(4px);
-    color: #FFFFFF;
-}
-
-.whatsapp-card:hover {
-    border-color: #25D366;
-    background: rgba(37, 211, 102, 0.1);
-    box-shadow: 0 20px 50px rgba(37, 211, 102, 0.25);
-}
-
-.instagram-card:hover {
-    border-color: #E1306C;
-    background: rgba(225, 48, 108, 0.1);
-    box-shadow: 0 20px 50px rgba(225, 48, 108, 0.25);
-}
-
-.booking-trigger-card:hover {
-    border-color: #C084FC;
-    background: rgba(192, 132, 252, 0.12);
-    box-shadow: 0 20px 50px rgba(192, 132, 252, 0.25);
+    transform: translateX(6px);
+    color: #C084FC;
 }
 
 /* Floating WhatsApp Action Badge */
