@@ -225,16 +225,16 @@
                 </div>
             </div>
 
-            <!-- RIGHT SIDE — Clean Apple Vision Pro AI Workspace Command Center -->
+            <!-- RIGHT SIDE — Simplified & Calm AI Workspace Card -->
             <div class="hero-workspace-stage" id="hero-chamber">
                 
-                <!-- Ambient Glow behind Workspace -->
+                <!-- Soft Ambient Background Glow -->
                 <div class="workspace-ambient-glow"></div>
 
-                <!-- Main Glass Command Center Workspace Window -->
-                <div class="ai-command-workspace" id="command-workspace">
+                <!-- Main Glass AI Workspace Card -->
+                <div class="ai-command-workspace minimalist-workspace" id="command-workspace">
                     
-                    <!-- Workspace Header Bar -->
+                    <!-- Header Bar -->
                     <div class="workspace-header-bar">
                         <div class="window-controls">
                             <span class="w-dot dot-red"></span>
@@ -243,128 +243,83 @@
                         </div>
                         <div class="workspace-title-badge">
                             <span class="badge-status-dot"></span>
-                            <span>ARIA // AI OPERATING SYSTEM</span>
-                        </div>
-                        <div class="workspace-live-metric">
-                            <span class="live-pulse"></span>
-                            <span class="metric-txt">60 FPS // ONLINE</span>
+                            <span>ARIA // AI CONSULTANT</span>
                         </div>
                     </div>
 
-                    <!-- Clean Workspace Inner Grid (Spacious & Apple-Minimal) -->
-                    <div class="workspace-inner-grid">
+                    <!-- Simplified Inner Workspace Content -->
+                    <div class="workspace-minimal-content">
                         
-                        <!-- 1. Aria System Operator Card -->
-                        <div class="ws-widget aria-operator-card">
-                            <div class="aria-avatar-circle">
-                                <img src="aria_hero_circular.webp" alt="Aria AI Operator" class="aria-operator-img" width="56" height="56" loading="eager" decoding="async">
-                                <span class="operator-pulse-dot"></span>
+                        <!-- 1. AI Agent Status Widget (Aria Consultant) -->
+                        <div class="ws-widget aria-agent-status-widget">
+                            <div class="aria-avatar-wrap">
+                                <img src="aria_hero_circular.webp" alt="Aria — AI Consultant" class="aria-avatar-img" width="56" height="56" loading="eager" decoding="async">
+                                <span class="online-indicator"></span>
                             </div>
-                            <div class="operator-details">
-                                <span class="op-tag">SYSTEM OPERATOR</span>
-                                <h4 class="op-name">Aria AI</h4>
-                                <span class="op-status">Active & Guiding System</span>
+                            <div class="agent-info">
+                                <span class="agent-role-tag">AI CONSULTANT</span>
+                                <h4 class="agent-name">Aria AI</h4>
+                                <span class="agent-status-text">Active & Guiding Workflows</span>
                             </div>
                         </div>
 
-                        <!-- 2. AI Performance Analytics Chart Panel -->
-                        <div class="ws-widget analytics-panel">
-                            <div class="widget-header">
-                                <span class="w-title">AI Performance Analytics</span>
-                                <span class="w-tag">+42% Growth</span>
+                        <!-- 2. Small Analytics Widget -->
+                        <div class="ws-widget analytics-minimal-widget">
+                            <div class="widget-top-bar">
+                                <span class="w-label">Analytics</span>
+                                <span class="w-growth-badge">+42% Growth</span>
                             </div>
-                            <div class="chart-container">
-                                <svg class="analytics-svg" viewBox="0 0 240 60" fill="none">
+                            <div class="chart-container-minimal">
+                                <svg class="analytics-svg-minimal" viewBox="0 0 240 50" fill="none">
                                     <defs>
-                                        <linearGradient id="chartGlow" x1="0" y1="0" x2="0" y2="1">
-                                            <stop offset="0%" stop-color="#C084FC" stop-opacity="0.4"/>
+                                        <linearGradient id="chartGlowMin" x1="0" y1="0" x2="0" y2="1">
+                                            <stop offset="0%" stop-color="#C084FC" stop-opacity="0.3"/>
                                             <stop offset="100%" stop-color="#C084FC" stop-opacity="0"/>
                                         </linearGradient>
                                     </defs>
-                                    <path d="M0 50 Q 35 30, 70 38 T 140 18 T 200 10 T 240 4 L 240 60 L 0 60 Z" fill="url(#chartGlow)" />
-                                    <path class="chart-line-path" d="M0 50 Q 35 30, 70 38 T 140 18 T 200 10 T 240 4" stroke="#C084FC" stroke-width="2.5" stroke-linecap="round" />
-                                    <circle cx="240" cy="4" r="4" fill="#C084FC" class="chart-end-dot" />
+                                    <path d="M0 45 Q 40 25, 80 32 T 160 15 T 240 6 L 240 50 L 0 50 Z" fill="url(#chartGlowMin)" />
+                                    <path class="chart-line-path-minimal" d="M0 45 Q 40 25, 80 32 T 160 15 T 240 6" stroke="#C084FC" stroke-width="2" stroke-linecap="round" />
+                                    <circle cx="240" cy="6" r="3.5" fill="#C084FC" />
                                 </svg>
                             </div>
-                            <div class="chart-stats-row">
-                                <div class="c-stat"><span>Tokens/sec</span><strong>1,420</strong></div>
-                                <div class="c-stat"><span>Latency</span><strong>74ms</strong></div>
-                            </div>
                         </div>
 
-                        <!-- 3. Workflow Pipeline -->
-                        <div class="ws-widget workflow-panel">
-                            <div class="widget-header">
-                                <span class="w-title">Workflow Pipeline</span>
-                                <span class="w-status-pill">RUNNING</span>
+                        <!-- 3. Small Automation Status Widget -->
+                        <div class="ws-widget automation-status-widget">
+                            <div class="widget-top-bar">
+                                <span class="w-label">Automation Pipeline</span>
+                                <span class="pipeline-running-tag">RUNNING</span>
                             </div>
-                            <div class="pipeline-nodes">
-                                <div class="node-step">
-                                    <span class="node-dot"></span>
-                                    <span>Lead Inbound</span>
-                                </div>
-                                <div class="pipeline-connector">
-                                    <span class="signal-pulse"></span>
-                                </div>
-                                <div class="node-step active">
-                                    <span class="node-dot active"></span>
-                                    <span>Aria Triage</span>
-                                </div>
-                                <div class="pipeline-connector">
-                                    <span class="signal-pulse"></span>
-                                </div>
-                                <div class="node-step">
-                                    <span class="node-dot"></span>
-                                    <span>CRM Synced</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- 4. Aria Live Thought Stream -->
-                        <div class="ws-widget chat-stream-widget">
-                            <div class="chat-header">
-                                <span class="c-dot"></span>
-                                <span class="c-title">Aria Thought Stream</span>
-                            </div>
-                            <div class="chat-typing-box">
-                                <p class="typing-text" id="aria-live-prompt">"Aria identified 14 workflow bottlenecks and optimized triage speed by 3.8x..."</p>
+                            <div class="pipeline-flow">
+                                <span class="p-step">Lead Inbound</span>
+                                <span class="p-arrow">→</span>
+                                <span class="p-step active">Aria Triage</span>
+                                <span class="p-arrow">→</span>
+                                <span class="p-step">CRM Synced</span>
                             </div>
                         </div>
 
                     </div>
 
-                    <!-- Clean Integrated 6 3D Icons Dock Bar -->
-                    <div class="hero-3d-icons-dock">
-                        <div class="dock-badge">
-                            <img src="hero_3d_robot.png" alt="AI Agent" class="dock-img" width="28" height="28">
-                            <span>AI Agent</span>
-                        </div>
-                        <div class="dock-badge">
-                            <img src="hero_3d_gear.png" alt="Automation" class="dock-img" width="28" height="28">
-                            <span>Automation</span>
-                        </div>
-                        <div class="dock-badge">
-                            <img src="hero_3d_analytics.png" alt="Analytics" class="dock-img" width="28" height="28">
-                            <span>Analytics</span>
-                        </div>
-                        <div class="dock-badge">
-                            <img src="hero_3d_chat.png" alt="AI Chat" class="dock-img" width="28" height="28">
-                            <span>AI Chat</span>
-                        </div>
-                        <div class="dock-badge">
-                            <img src="hero_3d_cloud.png" alt="Cloud AI" class="dock-img" width="28" height="28">
-                            <span>Cloud AI</span>
-                        </div>
-                        <div class="dock-badge">
-                            <div class="dock-svg-icon">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C084FC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                                </svg>
-                            </div>
-                            <span>Security</span>
+                </div>
+
+                <!-- ONLY TWO Surrounding Floating 3D Icons -->
+                <div class="floating-3d-icons-group">
+                    <!-- 1. Automation Icon -->
+                    <div class="floating-icon-card pos-automation-icon" data-parallax="0.03">
+                        <div class="glass-3d-badge">
+                            <img src="hero_3d_gear.png" alt="Automation" class="img-3d-icon" width="36" height="36">
+                            <span class="icon-label">Automation</span>
                         </div>
                     </div>
 
+                    <!-- 2. Analytics Icon -->
+                    <div class="floating-icon-card pos-analytics-icon" data-parallax="-0.04">
+                        <div class="glass-3d-badge">
+                            <img src="hero_3d_analytics.png" alt="Analytics" class="img-3d-icon" width="36" height="36">
+                            <span class="icon-label">Analytics</span>
+                        </div>
+                    </div>
                 </div>
 
             </div>
