@@ -4244,5 +4244,17 @@ html, body {
     }
 }
 
+/* ==========================================================================
+   ACCESSIBILITY & KEYBOARD FOCUS STATES
+   ========================================================================== */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+    outline: 2px solid #C084FC !important;
+    outline-offset: 3px !important;
+    box-shadow: 0 0 15px rgba(192, 132, 252, 0.4) !important;
+}
+
 
 

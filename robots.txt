@@ -1,0 +1,5 @@
+# Robots.txt for The Code Whiz (https://thecodewhizz.vercel.app)
+User-agent: *
+Allow: /
+
+Sitemap: https://thecodewhizz.vercel.app/sitemap.xml
