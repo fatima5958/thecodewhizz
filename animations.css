@@ -1364,27 +1364,36 @@
 /* ====================================================
    APPLE-INSPIRED LUXURY CIRCULAR HERO SYSTEM (VISUAL POLISH V1)
    ==================================================== */
+/* ====================================================
+   APPLE VISION PRO & LINEAR INSPIRED AI COMMAND CENTER HERO
+   ==================================================== */
 .hero-apple-minimal {
-    padding: 140px 0 100px;
-    min-height: 90vh;
+    padding: 130px 0 90px;
+    min-height: 92vh;
     display: flex;
     align-items: center;
     position: relative;
-    background: radial-gradient(circle at 65% 45%, rgba(139, 92, 246, 0.1), transparent 55%), #050505;
+    background: radial-gradient(circle at 70% 40%, rgba(139, 92, 246, 0.12), transparent 60%), #0A0A0E;
+    overflow: hidden;
 }
 
 .hero-apple__inner {
     display: grid;
-    grid-template-columns: 1.15fr 0.85fr;
+    grid-template-columns: 1fr 1fr;
     align-items: center;
-    max-width: 1260px;
+    max-width: 1280px;
     margin: 0 auto;
-    gap: 70px;
+    gap: 50px;
     padding: 0 40px;
     width: 100%;
 }
 
 /* Left Editorial Content */
+.hero-editorial {
+    position: relative;
+    z-index: 10;
+}
+
 .hero-label-chip {
     display: inline-flex;
     align-items: center;
@@ -1413,22 +1422,28 @@
 
 .hero-title--apple {
     font-family: var(--font-heading);
-    font-size: clamp(3.4rem, 5.8vw, 5.0rem);
+    font-size: clamp(2.8rem, 4.5vw, 4.4rem);
     font-weight: 800;
-    line-height: 1.05;
+    line-height: 1.08;
     color: #FAFAFA;
-    letter-spacing: -0.035em;
-    margin-bottom: 24px;
+    letter-spacing: -0.03em;
+    margin-bottom: 22px;
     text-shadow: 0 10px 40px rgba(0, 0, 0, 0.7);
 }
 
+.title-gradient-glow {
+    background: linear-gradient(135deg, #FAFAFA 30%, #C084FC 70%, #9333EA 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 .hero-subtitle--apple {
-    font-size: clamp(1.08rem, 1.6vw, 1.3rem);
+    font-size: clamp(1.02rem, 1.4vw, 1.2rem);
     line-height: 1.65;
     color: #A1A1AA;
     font-weight: 400;
-    max-width: 540px;
-    margin-bottom: 40px;
+    max-width: 520px;
+    margin-bottom: 36px;
 }
 
 .hero-cta-group {
@@ -1436,201 +1451,456 @@
     align-items: center;
     gap: 16px;
     flex-wrap: wrap;
+    margin-bottom: 32px;
 }
 
-/* Primary Button: Start Free AI Consultation */
-.btn-primary-glow {
-    display: inline-flex;
+.hero-trust-row {
+    display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 10px;
-    min-height: 52px;
-    padding: 0 32px;
-    box-sizing: border-box;
-    background: linear-gradient(135deg, #C084FC, #9333EA);
-    color: #FFFFFF !important;
-    font-family: var(--font-heading);
-    font-size: 0.92rem;
-    font-weight: 700;
-    border-radius: 9999px;
-    box-shadow: 0 0 35px rgba(192, 132, 252, 0.4), 0 10px 25px rgba(0, 0, 0, 0.5);
-    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
-    text-decoration: none;
-    line-height: 1;
+    gap: 16px;
+    flex-wrap: wrap;
 }
 
-.btn-primary-glow:hover {
-    transform: translateY(-3px) scale(1.02);
-    box-shadow: 0 0 50px rgba(192, 132, 252, 0.75), 0 15px 35px rgba(0, 0, 0, 0.6);
-    background: linear-gradient(135deg, #D8B4FE, #A855F7);
-}
-
-/* Secondary Button: Watch Demo */
-.btn-secondary-ghost {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    min-height: 52px;
-    padding: 0 28px;
-    box-sizing: border-box;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.16);
-    color: #FAFAFA !important;
+.trust-badge-item {
     font-family: var(--font-heading);
-    font-size: 0.92rem;
+    font-size: 0.78rem;
     font-weight: 600;
+    color: #D4D4D8;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 4px 12px;
     border-radius: 9999px;
-    backdrop-filter: blur(16px);
-    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
-    cursor: pointer;
-    line-height: 1;
 }
 
-.btn-secondary-ghost:hover {
-    transform: translateY(-3px) scale(1.02);
-    background: rgba(255, 255, 255, 0.12);
-    border-color: rgba(192, 132, 252, 0.5);
-    box-shadow: 0 10px 30px rgba(139, 92, 246, 0.25);
-}
-
-/* RIGHT SIDE — Apple Premium Circular Container */
-.hero-circular-stage {
+/* RIGHT SIDE — AI Command Center Workspace Stage */
+.hero-workspace-stage {
     position: relative;
-    width: 440px;
-    height: 440px;
+    width: 100%;
+    min-height: 520px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto;
 }
 
-/* Orbiting Neural Glow Ring */
-.circular-neural-ring {
+.workspace-ambient-glow {
     position: absolute;
-    inset: -14px;
-    border-radius: 50%;
-    border: 1px dashed rgba(192, 132, 252, 0.22);
-    animation: ring-rotate 28s linear infinite;
-    pointer-events: none;
-}
-
-@keyframes ring-rotate {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
-.circular-ambient-glow {
-    position: absolute;
-    inset: -45px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(192, 132, 252, 0.25) 0%, rgba(139, 92, 246, 0.08) 55%, transparent 75%);
-    filter: blur(55px);
-    opacity: 0.65;
+    inset: -30px;
+    background: radial-gradient(circle, rgba(192, 132, 252, 0.22) 0%, rgba(139, 92, 246, 0.06) 55%, transparent 75%);
+    filter: blur(50px);
+    opacity: 0.7;
     animation: glow-pulse 6s ease-in-out infinite alternate;
     pointer-events: none;
 }
 
-@keyframes glow-pulse {
-    0% { opacity: 0.5; transform: scale(0.95); }
-    100% { opacity: 0.8; transform: scale(1.05); }
-}
-
-/* Orbiting Tiny Particles */
-.orbit-particle {
-    position: absolute;
-    width: 5px;
-    height: 5px;
-    background: #E9D5FF;
-    border-radius: 50%;
-    box-shadow: 0 0 10px #C084FC;
-    pointer-events: none;
-    z-index: 5;
-    opacity: 0.7;
-}
-
-.orbit-particle.p1 { top: 20px; right: 55px; animation: p-orbit 8s ease-in-out infinite alternate; }
-.orbit-particle.p2 { bottom: 40px; left: 35px; animation: p-orbit 11s ease-in-out infinite alternate 1s; }
-.orbit-particle.p3 { top: 50%; left: -15px; animation: p-orbit 9s ease-in-out infinite alternate 2s; }
-
-@keyframes p-orbit {
-    0% { transform: translate(0, 0) scale(0.9); opacity: 0.4; }
-    100% { transform: translate(8px, -10px) scale(1.3); opacity: 0.85; }
-}
-
-/* Large Circular Glass Frame (390px) */
-.aria-circular-frame {
-    width: 390px;
-    height: 390px;
-    border-radius: 50%;
+/* Main Glass AI Command Center Workspace Window */
+.ai-command-workspace {
+    width: 100%;
+    max-width: 520px;
+    background: rgba(14, 14, 22, 0.82);
+    border: 1px solid rgba(192, 132, 252, 0.25);
+    border-radius: 26px;
+    padding: 20px;
+    backdrop-filter: blur(28px);
+    -webkit-backdrop-filter: blur(28px);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.85), 0 0 40px rgba(139, 92, 246, 0.18), inset 0 1px 1.5px rgba(255, 255, 255, 0.2);
+    animation: floating-workspace 6s ease-in-out infinite alternate;
     position: relative;
-    padding: 6px;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.4) 0%, rgba(192, 132, 252, 0.35) 35%, rgba(255, 255, 255, 0.08) 70%, rgba(192, 132, 252, 0.2) 100%);
-    box-shadow: 0 0 45px rgba(192, 132, 252, 0.3), 0 35px 90px rgba(0, 0, 0, 0.95), inset 0 1.5px 2px rgba(255, 255, 255, 0.5), inset 0 -2px 8px rgba(139, 92, 246, 0.25);
-    animation: circle-float 6s ease-in-out infinite alternate, circle-breath 7s ease-in-out infinite alternate;
-    overflow: hidden;
     z-index: 10;
+    transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-@keyframes circle-float {
+@keyframes floating-workspace {
     0% { transform: translateY(0px); }
     100% { transform: translateY(-8px); }
 }
 
-@keyframes circle-breath {
-    0% { transform: scale(1.0); }
-    100% { transform: scale(1.018); }
+/* Workspace Header Bar */
+.workspace-header-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 16px;
+    margin-bottom: 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.circular-glass-backdrop {
-    position: absolute;
-    inset: 0;
+.window-controls {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.w-dot {
+    width: 10px;
+    height: 10px;
     border-radius: 50%;
-    background: radial-gradient(circle at 50% 30%, rgba(38, 30, 56, 0.88), rgba(10, 10, 14, 0.98));
-    backdrop-filter: blur(32px);
-    -webkit-backdrop-filter: blur(32px);
-    z-index: 1;
+}
+.dot-red { background: #FF5F56; }
+.dot-yellow { background: #FFBD2E; }
+.dot-green { background: #27C93F; }
+
+.workspace-title-badge {
+    font-family: var(--font-heading);
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: #C084FC;
+    letter-spacing: 0.06em;
+    display: flex;
+    align-items: center;
+    gap: 6px;
 }
 
-.aria-circular-img {
+.badge-status-dot {
+    width: 6px;
+    height: 6px;
+    background: #C084FC;
+    border-radius: 50%;
+    box-shadow: 0 0 8px #C084FC;
+}
+
+.workspace-live-metric {
+    font-family: var(--font-heading);
+    font-size: 0.68rem;
+    font-weight: 600;
+    color: #A1A1AA;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.live-pulse {
+    width: 6px;
+    height: 6px;
+    background: #22C55E;
+    border-radius: 50%;
+    box-shadow: 0 0 8px #22C55E;
+    animation: live-ping 1.8s infinite;
+}
+
+@keyframes live-ping {
+    0% { transform: scale(0.9); opacity: 1; }
+    50% { transform: scale(1.4); opacity: 0.5; }
+    100% { transform: scale(0.9); opacity: 1; }
+}
+
+/* Inner Workspace Grid Layout */
+.workspace-inner-grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 14px;
+}
+
+.ws-widget {
+    background: rgba(22, 20, 32, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 16px;
+    padding: 14px;
+    backdrop-filter: blur(16px);
+}
+
+/* 1. Aria Operator Card (Occupies ~22% of grid area) */
+.aria-operator-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(192, 132, 252, 0.08);
+    border: 1px solid rgba(192, 132, 252, 0.25);
+}
+
+.aria-avatar-circle {
     position: relative;
-    z-index: 2;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    border: 1px solid rgba(192, 132, 252, 0.4);
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.aria-operator-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: 50% 5%;
-    border-radius: 50%;
-    transform: scale(1.0);
-    transition: transform 0.4s ease;
-    filter: drop-shadow(0 15px 35px rgba(0, 0, 0, 0.9)) contrast(1.04) brightness(1.02);
+    object-position: top center;
 }
 
-/* Small AI Online Indicator Pill */
-.circular-status-pill {
+.operator-pulse-dot {
     position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 30;
-    background: rgba(12, 12, 16, 0.92);
-    border: 1px solid rgba(192, 132, 252, 0.4);
-    border-radius: 9999px;
-    padding: 7px 18px;
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), 0 0 15px rgba(192, 132, 252, 0.25);
+    bottom: 2px;
+    right: 2px;
+    width: 10px;
+    height: 10px;
+    background: #22C55E;
+    border: 2px solid #0A0A0E;
+    border-radius: 50%;
+}
+
+.operator-details {
     display: flex;
-    align-items: center;
-    gap: 8px;
+    flex-direction: column;
+}
+
+.op-tag {
+    font-size: 0.6rem;
+    font-weight: 700;
+    color: #C084FC;
+    letter-spacing: 0.05em;
+}
+
+.op-name {
     font-family: var(--font-heading);
-    font-size: 0.78rem;
+    font-size: 0.98rem;
     font-weight: 700;
     color: #FAFAFA;
-    white-space: nowrap;
-    letter-spacing: 0.03em;
+    margin: 1px 0;
 }
 
-/* Responsive Scaling for Mobile */
+.op-status {
+    font-size: 0.7rem;
+    color: #A1A1AA;
+}
+
+/* 2. AI Performance Analytics Panel */
+.analytics-panel {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.widget-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.w-title {
+    font-family: var(--font-heading);
+    font-size: 0.74rem;
+    font-weight: 700;
+    color: #E4E4E7;
+}
+
+.w-tag {
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: #22C55E;
+    background: rgba(34, 197, 94, 0.12);
+    padding: 2px 6px;
+    border-radius: 9999px;
+}
+
+.chart-container {
+    height: 48px;
+    width: 100%;
+}
+
+.analytics-svg {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+}
+
+.chart-line-path {
+    stroke-dasharray: 400;
+    stroke-dashoffset: 400;
+    animation: drawChartLine 2.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes drawChartLine {
+    to { stroke-dashoffset: 0; }
+}
+
+.chart-stats-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 6px;
+    padding-top: 6px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.c-stat {
+    font-size: 0.68rem;
+    color: #A1A1AA;
+    display: flex;
+    gap: 4px;
+}
+.c-stat strong {
+    color: #FAFAFA;
+}
+
+/* 3. Workflow Automation Panel */
+.workflow-panel {
+    grid-column: span 2;
+}
+
+.w-status-pill {
+    font-size: 0.62rem;
+    font-weight: 700;
+    color: #C084FC;
+    background: rgba(192, 132, 252, 0.12);
+    padding: 2px 8px;
+    border-radius: 9999px;
+    letter-spacing: 0.04em;
+}
+
+.pipeline-nodes {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 8px;
+}
+
+.node-step {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.72rem;
+    color: #A1A1AA;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 4px 10px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.node-step.active {
+    color: #FAFAFA;
+    border-color: rgba(192, 132, 252, 0.3);
+    background: rgba(192, 132, 252, 0.1);
+}
+
+.node-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #71717A;
+}
+
+.node-dot.active {
+    background: #C084FC;
+    box-shadow: 0 0 8px #C084FC;
+}
+
+.pipeline-connector {
+    flex: 1;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.1);
+    margin: 0 6px;
+    position: relative;
+    overflow: hidden;
+}
+
+.signal-pulse {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, #C084FC, transparent);
+    animation: signal-flow 1.8s infinite linear;
+}
+
+@keyframes signal-flow {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(250%); }
+}
+
+/* 4. Real-time AI Chat Prompt Stream Widget */
+.chat-stream-widget {
+    grid-column: span 2;
+    background: rgba(18, 18, 26, 0.85);
+    border-color: rgba(192, 132, 252, 0.2);
+}
+
+.chat-header {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 6px;
+}
+
+.c-dot {
+    width: 6px;
+    height: 6px;
+    background: #C084FC;
+    border-radius: 50%;
+}
+
+.c-title {
+    font-size: 0.68rem;
+    font-weight: 700;
+    color: #C084FC;
+    letter-spacing: 0.04em;
+}
+
+.typing-text {
+    font-size: 0.76rem;
+    color: #E4E4E7;
+    line-height: 1.45;
+    margin: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* 5 & 6. Metrics & Insights Row */
+.metrics-grid-widget {
+/* Clean Integrated 6 3D Icons Dock Bar */
+.hero-3d-icons-dock {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 6px;
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    flex-wrap: wrap;
+}
+
+.dock-badge {
+    background: rgba(22, 20, 32, 0.75);
+    border: 1px solid rgba(192, 132, 252, 0.22);
+    border-radius: 12px;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--font-heading);
+    font-size: 0.68rem;
+    font-weight: 700;
+    color: #FAFAFA;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    cursor: default;
+    backdrop-filter: blur(12px);
+}
+
+.dock-badge:hover {
+    border-color: rgba(192, 132, 252, 0.55);
+    background: rgba(192, 132, 252, 0.14);
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
+    transform: translateY(-2px);
+}
+
+.dock-img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 6px rgba(139, 92, 246, 0.3));
+}
+
+.dock-svg-icon {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(192, 132, 252, 0.12);
+    border-radius: 6px;
+}
+
+/* Responsive Scaling for Mobile & Tablet */
 @media (max-width: 991px) {
     .hero-apple-minimal {
         padding: 110px 0 70px;
@@ -1651,14 +1921,37 @@
         justify-content: center;
     }
 
-    .hero-circular-stage {
-        width: 310px;
-        height: 310px;
+    .hero-trust-row {
+        justify-content: center;
     }
 
-    .aria-circular-frame {
-        width: 290px;
-        height: 290px;
+    .hero-workspace-stage {
+        min-height: auto;
+    }
+
+    .ai-command-workspace {
+        max-width: 100%;
+    }
+
+    .floating-3d-icons-group {
+        display: none; /* Prevent horizontal overflow on narrow mobile screens */
+    }
+}
+
+@media (max-width: 600px) {
+    .workspace-inner-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .aria-operator-card,
+    .analytics-panel,
+    .workflow-panel,
+    .chat-stream-widget {
+        grid-column: span 1;
+    }
+
+    .hero-title--apple {
+        font-size: clamp(2.2rem, 7vw, 3.2rem);
     }
 }
 

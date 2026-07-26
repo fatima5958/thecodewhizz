@@ -547,53 +547,63 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ----------------------------------------------------
-    // Hero: Cinematic Aria Chamber Parallax
+    // Hero: AI Command Center Mouse Parallax & Thought Stream
     // ----------------------------------------------------
-    const heroAriaVessel = document.getElementById('aria-vessel');
     const heroChamber = document.getElementById('hero-chamber');
-    const ariaPortrait = document.getElementById('aria-portrait');
+    const commandWorkspace = document.getElementById('command-workspace');
+    const floatingIconCards = document.querySelectorAll('.floating-icon-card');
+    const ariaLivePrompt = document.getElementById('aria-live-prompt');
 
-    if (heroAriaVessel && heroChamber) {
-        // Natural blinking effect
-        if (ariaPortrait) {
-            setInterval(() => {
-                ariaPortrait.style.opacity = '0.94';
-                setTimeout(() => { ariaPortrait.style.opacity = '1.0'; }, 130);
-            }, 4500);
-        }
+    if (heroChamber && commandWorkspace) {
+        let isHovered = false;
 
-        // Mouse parallax on chamber
-        heroChamber.addEventListener('mousemove', (e) => {
-            const rect = heroChamber.getBoundingClientRect();
-            const x = (e.clientX - rect.left - rect.width / 2) / 30;
-            const y = (e.clientY - rect.top - rect.height / 2) / 40;
-            heroAriaVessel.style.transform = `translate3d(${x}px, ${y}px, 0) rotateY(${x * 0.6}deg)`;
+        heroChamber.addEventListener('mouseenter', () => { isHovered = true; });
+        heroChamber.addEventListener('mouseleave', () => {
+            isHovered = false;
+            commandWorkspace.style.transform = 'translate3d(0, 0, 0) rotateX(0deg) rotateY(0deg)';
+            floatingIconCards.forEach(card => {
+                card.style.transform = 'translate3d(0, 0, 0)';
+            });
         });
 
-        heroChamber.addEventListener('mouseleave', () => {
-            heroAriaVessel.style.transform = `translate3d(0, 0, 0) rotateY(0deg)`;
+        heroChamber.addEventListener('mousemove', (e) => {
+            if (!isHovered) return;
+            const rect = heroChamber.getBoundingClientRect();
+            const mouseX = (e.clientX - rect.left - rect.width / 2) / (rect.width / 2);
+            const mouseY = (e.clientY - rect.top - rect.height / 2) / (rect.height / 2);
+
+            const moveX = mouseX * 12;
+            const moveY = mouseY * 12;
+            const rotX = -mouseY * 4;
+            const rotY = mouseX * 4;
+
+            commandWorkspace.style.transform = `translate3d(${moveX}px, ${moveY}px, 0) rotateX(${rotX}deg) rotateY(${rotY}deg)`;
+
+            floatingIconCards.forEach(card => {
+                const factor = parseFloat(card.getAttribute('data-parallax') || '0.04');
+                const cardX = mouseX * factor * 100;
+                const cardY = mouseY * factor * 100;
+                card.style.transform = `translate3d(${cardX}px, ${cardY}px, 0)`;
+            });
         });
     }
 
-    // ----------------------------------------------------
-    // Aria Strategy Status Cycling Animation
-    // ----------------------------------------------------
-    const ariaTypingText = document.getElementById('aria-typing-text');
-    if (ariaTypingText) {
-        const statuses = [
-            "Analyzing your business...",
-            "Creating your strategy...",
-            "Ready to help."
+    if (ariaLivePrompt) {
+        const liveThoughts = [
+            '"Aria identified 14 workflow bottlenecks and optimized triage speed by 3.8x..."',
+            '"Autonomous agents processed 1,420 inbound queries with 99.9% accuracy..."',
+            '"Real-time ROI model predicts 18 hours saved per employee every week..."',
+            '"Enterprise LLM pipeline secured with zero-retention privacy protocol..."'
         ];
-        let statusIndex = 0;
+        let thoughtIdx = 0;
         setInterval(() => {
-            ariaTypingText.style.opacity = '0';
+            ariaLivePrompt.style.opacity = '0';
             setTimeout(() => {
-                statusIndex = (statusIndex + 1) % statuses.length;
-                ariaTypingText.textContent = statuses[statusIndex];
-                ariaTypingText.style.opacity = '1';
+                thoughtIdx = (thoughtIdx + 1) % liveThoughts.length;
+                ariaLivePrompt.textContent = liveThoughts[thoughtIdx];
+                ariaLivePrompt.style.opacity = '1';
             }, 300);
-        }, 3800);
+        }, 4200);
     }
 
     // ----------------------------------------------------
