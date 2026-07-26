@@ -1,5 +1,5 @@
 /**
- * FRONTEND/CONTACT_FORM.JS — Premium Glassmorphism Contact Form & Validation Engine
+ * FRONTEND/CONTACT_FORM.JS — Production Lead Capture Form Engine (Connected to /api/contact)
  */
 
 class LuxuryContactForm {
@@ -16,6 +16,8 @@ class LuxuryContactForm {
         this.btnSubmit = document.getElementById('btn-submit-contact');
         this.btnReset = document.getElementById('btn-reset-contact');
         this.sentUserName = document.getElementById('sent-user-name');
+        
+        this.isSubmitting = false;
 
         if (!this.form) return;
 
@@ -29,6 +31,7 @@ class LuxuryContactForm {
             if (input) {
                 input.addEventListener('input', () => {
                     this.clearFieldError(input);
+                    this.clearGlobalFormError();
                 });
                 input.addEventListener('blur', () => {
                     this.validateField(input);
@@ -87,19 +90,51 @@ class LuxuryContactForm {
         }
     }
 
-    handleSubmit() {
+    showGlobalFormError(msg) {
+        let errBanner = document.getElementById('form-global-error-banner');
+        if (!errBanner) {
+            errBanner = document.createElement('div');
+            errBanner.id = 'form-global-error-banner';
+            errBanner.className = 'form-global-error-banner';
+            this.form.insertBefore(errBanner, this.btnSubmit);
+        }
+        errBanner.textContent = msg;
+        errBanner.style.display = 'block';
+    }
+
+    clearGlobalFormError() {
+        const errBanner = document.getElementById('form-global-error-banner');
+        if (errBanner) {
+            errBanner.style.display = 'none';
+        }
+    }
+
+    shakeForm() {
+        if (this.formCard) {
+            this.formCard.classList.add('shake-error');
+            setTimeout(() => this.formCard.classList.remove('shake-error'), 500);
+        }
+    }
+
+    async handleSubmit() {
         const isNameValid = this.validateField(this.inputName);
         const isEmailValid = this.validateField(this.inputEmail);
         const isMsgValid = this.validateField(this.inputMessage);
 
         if (!isNameValid || !isEmailValid || !isMsgValid) {
-            // Shake form card gently on error
-            this.formCard.classList.add('shake-error');
-            setTimeout(() => this.formCard.classList.remove('shake-error'), 500);
+            this.shakeForm();
             return;
         }
 
-        // Show sending state on CTA button
+        if (this.isSubmitting) return;
+        this.isSubmitting = true;
+
+        const name = this.inputName.value.trim();
+        const email = this.inputEmail.value.trim();
+        const company = this.inputCompany ? this.inputCompany.value.trim() : '';
+        const message = this.inputMessage.value.trim();
+
+        // 1. Show Loading State on CTA Button
         if (this.btnSubmit) {
             this.btnSubmit.disabled = true;
             this.btnSubmit.innerHTML = `
@@ -108,40 +143,60 @@ class LuxuryContactForm {
             `;
         }
 
-        // Simulate ultra-fast transmission & success animation transition
-        setTimeout(() => {
-            const userName = this.inputName.value.trim() || 'Client';
-            if (this.sentUserName) {
-                this.sentUserName.textContent = userName;
+        try {
+            // 2. Submit Lead Data to Production Vercel Endpoint /api/contact
+            const response = await fetch('/api/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ name, email, company, message })
+            });
+
+            const data = await response.json();
+
+            if (response.ok && data.success) {
+                // 3. Handle Success State Transition
+                this.showSuccessState(name);
+            } else {
+                throw new Error(data.error || (data.details ? data.details.join(', ') : 'Transmission failed'));
             }
-
-            // Animate transition to Success State
-            this.form.style.opacity = '0';
-            this.form.style.transform = 'translateY(-10px)';
-            this.form.style.transition = 'all 0.35s ease';
-
-            setTimeout(() => {
-                this.form.style.display = 'none';
-                if (this.successState) {
-                    this.successState.style.display = 'flex';
-                    this.successState.style.opacity = '0';
-                    this.successState.style.transform = 'translateY(15px)';
-                    requestAnimationFrame(() => {
-                        this.successState.style.transition = 'all 0.45s cubic-bezier(0.16, 1, 0.3, 1)';
-                        this.successState.style.opacity = '1';
-                        this.successState.style.transform = 'translateY(0)';
-                    });
-                }
-            }, 350);
-
-        }, 750);
+        } catch (err) {
+            console.error('[Contact Form Submission Error]', err);
+            this.restoreSubmitButton();
+            this.shakeForm();
+            this.showGlobalFormError(err.message || 'Unable to transmit message. Please try again.');
+        } finally {
+            this.isSubmitting = false;
+        }
     }
 
-    resetForm() {
-        this.form.reset();
-        const inputs = [this.inputName, this.inputEmail, this.inputCompany, this.inputMessage];
-        inputs.forEach(input => this.clearFieldError(input));
+    showSuccessState(userName) {
+        if (this.sentUserName) {
+            this.sentUserName.textContent = userName || 'Client';
+        }
 
+        // Animate transition to Success State
+        this.form.style.opacity = '0';
+        this.form.style.transform = 'translateY(-10px)';
+        this.form.style.transition = 'all 0.35s ease';
+
+        setTimeout(() => {
+            this.form.style.display = 'none';
+            if (this.successState) {
+                this.successState.style.display = 'flex';
+                this.successState.style.opacity = '0';
+                this.successState.style.transform = 'translateY(15px)';
+                requestAnimationFrame(() => {
+                    this.successState.style.transition = 'all 0.45s cubic-bezier(0.16, 1, 0.3, 1)';
+                    this.successState.style.opacity = '1';
+                    this.successState.style.transform = 'translateY(0)';
+                });
+            }
+        }, 350);
+    }
+
+    restoreSubmitButton() {
         if (this.btnSubmit) {
             this.btnSubmit.disabled = false;
             this.btnSubmit.innerHTML = `
@@ -152,6 +207,15 @@ class LuxuryContactForm {
                 </svg>
             `;
         }
+    }
+
+    resetForm() {
+        this.form.reset();
+        this.clearGlobalFormError();
+        const inputs = [this.inputName, this.inputEmail, this.inputCompany, this.inputMessage];
+        inputs.forEach(input => this.clearFieldError(input));
+
+        this.restoreSubmitButton();
 
         if (this.successState) {
             this.successState.style.display = 'none';

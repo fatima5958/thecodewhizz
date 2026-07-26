@@ -3750,5 +3750,18 @@ button:active,
     gap: 10px;
 }
 
+.form-global-error-banner {
+    background: rgba(248, 113, 113, 0.12);
+    border: 1px solid rgba(248, 113, 113, 0.35);
+    border-radius: 12px;
+    padding: 10px 16px;
+    color: #F87171;
+    font-size: 0.82rem;
+    font-weight: 600;
+    margin-bottom: 16px;
+    text-align: center;
+    animation: errorFadeIn 0.25s ease;
+}
+
 
 
