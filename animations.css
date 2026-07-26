@@ -1454,6 +1454,74 @@
     margin-bottom: 32px;
 }
 
+/* Primary Button: Get Free AI Audit (Glowing Purple Gradient) */
+.btn-primary-glow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: 52px;
+    padding: 0 32px;
+    box-sizing: border-box;
+    background: linear-gradient(135deg, #C084FC 0%, #9333EA 100%);
+    color: #FFFFFF !important;
+    font-family: var(--font-heading);
+    font-size: 0.92rem;
+    font-weight: 700;
+    border-radius: 9999px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0 0 35px rgba(192, 132, 252, 0.45), 0 10px 25px rgba(0, 0, 0, 0.5);
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    text-decoration: none;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.btn-primary-glow:hover {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 0 55px rgba(192, 132, 252, 0.8), 0 15px 35px rgba(0, 0, 0, 0.6);
+    background: linear-gradient(135deg, #D8B4FE 0%, #A855F7 100%);
+}
+
+.btn-primary-glow .btn-arrow {
+    width: 16px;
+    height: 16px;
+    transition: transform 0.3s ease;
+}
+
+.btn-primary-glow:hover .btn-arrow {
+    transform: translateX(4px);
+}
+
+/* Secondary Button: System Architecture */
+.btn-secondary-ghost {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: 52px;
+    padding: 0 28px;
+    box-sizing: border-box;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    color: #FAFAFA !important;
+    font-family: var(--font-heading);
+    font-size: 0.92rem;
+    font-weight: 600;
+    border-radius: 9999px;
+    backdrop-filter: blur(16px);
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.btn-secondary-ghost:hover {
+    transform: translateY(-3px) scale(1.03);
+    background: rgba(192, 132, 252, 0.12);
+    border-color: rgba(192, 132, 252, 0.5);
+    box-shadow: 0 10px 35px rgba(139, 92, 246, 0.35);
+}
+
 .hero-trust-row {
     display: flex;
     align-items: center;
