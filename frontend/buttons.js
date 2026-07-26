@@ -31,7 +31,7 @@ class AriaButtonEngine {
 
                 // Smooth magnetic pull
                 btn.style.transform = `translate3d(${distanceX * 0.22}px, ${distanceY * 0.22}px, 0) scale(1.02)`;
-            });
+            }, { passive: true });
 
             btn.addEventListener('mouseleave', () => {
                 btn.style.transform = `translate3d(0px, 0px, 0) scale(1.0)`;

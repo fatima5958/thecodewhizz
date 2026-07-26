@@ -14,53 +14,53 @@ class AriaInfoModalEngine {
         this.docs = {
             'modal-automation': {
                 badge: 'SOLUTIONS // WORKFLOW AUTOMATION',
-                title: 'AI Workflow Automation Systems',
+                title: 'AI Workflow Automations',
                 content: `
-                    <p>Our custom AI workflow automation engines connect your existing CRM, database, email, and ERP systems to process complex business data autonomously.</p>
-                    <h4>Key Capabilities</h4>
+                    <p>Our AI workflow automations connect your existing software, forms, email, and CRM to eliminate manual work and process business data automatically.</p>
+                    <h4>Key Benefits</h4>
                     <ul>
-                        <li><strong>Self-Healing Pipelines:</strong> Automatically handle edge cases and log anomalies.</li>
-                        <li><strong>Instant API Integration:</strong> Native connectors for Salesforce, HubSpot, Stripe, Slack, and custom REST APIs.</li>
-                        <li><strong>65% Cost Reduction:</strong> Eliminate repetitive manual data entry and triage queues.</li>
+                        <li><strong>Automated Data Sync:</strong> Connect your forms, CRM, and email to save staff time.</li>
+                        <li><strong>Instant Software Integration:</strong> Works seamlessly with WhatsApp, Stripe, Google Workspace, and your existing tools.</li>
+                        <li><strong>Save Time & Cut Costs:</strong> Eliminate repetitive manual data entry and admin bottlenecks.</li>
                     </ul>
                 `
             },
             'modal-support': {
                 badge: 'SOLUTIONS // CUSTOMER SUPPORT',
-                title: '24/7 Autonomous AI Customer Support',
+                title: '24/7 AI Customer Support Chatbots',
                 content: `
-                    <p>Deploy human-like voice and chat AI agents that resolve customer queries in under 85 milliseconds with 99.8% accuracy.</p>
-                    <h4>Key Capabilities</h4>
+                    <p>Deploy 24/7 smart AI chatbots that answer customer questions instantly, capture leads, and book appointments with high accuracy.</p>
+                    <h4>Key Benefits</h4>
                     <ul>
-                        <li><strong>Multi-Channel Triage:</strong> Seamless execution across web chat, phone voice lines, and email.</li>
-                        <li><strong>Sentiment Analysis:</strong> Real-time emotional evaluation for smooth escalation to human managers when needed.</li>
-                        <li><strong>24/7 Availability:</strong> Zero downtime, infinite concurrency support.</li>
+                        <li><strong>24/7 Instant Replies:</strong> Greet website visitors instantly any time of day or night.</li>
+                        <li><strong>Automated Lead Capture:</strong> Collect contact details and answer FAQs without staff intervention.</li>
+                        <li><strong>Higher Customer Satisfaction:</strong> Zero wait times for your clients.</li>
                     </ul>
                 `
             },
             'modal-sales': {
                 badge: 'SOLUTIONS // SALES & LEADS',
-                title: 'Autonomous AI Sales & Lead Generation',
+                title: 'AI Lead Generation & Booking',
                 content: `
-                    <p>Turn website traffic into qualified sales appointments automatically. Aria engages visitors, scores their buying intent, and books strategy meetings.</p>
-                    <h4>Key Capabilities</h4>
+                    <p>Turn website visitors into booked appointments automatically. Aria greets customers, answers FAQs, and books meetings for your business.</p>
+                    <h4>Key Benefits</h4>
                     <ul>
-                        <li><strong>Instant Lead Speed:</strong> Response time under 30 seconds after inquiry submission.</li>
-                        <li><strong>Dynamic Pricing Assistant:</strong> Provide customized estimates based on client parameters.</li>
-                        <li><strong>+42% Conversion Lift:</strong> Capture high-value leads before they leave your site.</li>
+                        <li><strong>Instant Response:</strong> Reply to new inquiries in under 5 seconds.</li>
+                        <li><strong>Automated Scheduling:</strong> Allow clients to pick available slots directly.</li>
+                        <li><strong>Higher Conversion Rate:</strong> Capture leads before they leave your website.</li>
                     </ul>
                 `
             },
             'modal-custom': {
-                badge: 'SOLUTIONS // CUSTOM INFRASTRUCTURE',
-                title: 'Custom Enterprise AI Infrastructure',
+                badge: 'SOLUTIONS // CUSTOM SOLUTIONS',
+                title: 'Custom AI Business Solutions',
                 content: `
-                    <p>We design bespoke neural model pipelines tailored strictly to your industry data, compliance standards, and internal knowledge bases.</p>
-                    <h4>Key Capabilities</h4>
+                    <p>We build custom websites, automated workflows, and smart AI tools tailored to your specific business requirements and daily operations.</p>
+                    <h4>Key Benefits</h4>
                     <ul>
-                        <li><strong>Private LLM Fine-Tuning:</strong> Train models strictly on your proprietary documentation.</li>
-                        <li><strong>Zero Vendor Lock-In:</strong> Fully owned model weights and self-hosted infrastructure options.</li>
-                        <li><strong>High Throughput:</strong> Low-latency inference tailored for enterprise workloads.</li>
+                        <li><strong>Tailored to Your Workflow:</strong> Built around how your clinic, restaurant, store, or agency operates.</li>
+                        <li><strong>Fully Owned & Secure:</strong> Complete control over your business data and website.</li>
+                        <li><strong>Built for Growth:</strong> Scalable systems that grow as your business expands.</li>
                     </ul>
                 `
             },

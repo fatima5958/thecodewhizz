@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
             canvas.height = window.innerHeight;
         };
 
-        window.addEventListener('resize', resizeCanvas);
+        window.addEventListener('resize', resizeCanvas, { passive: true });
         resizeCanvas();
 
         class Particle {
@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
         window.addEventListener('mousemove', (e) => {
             mouseX = e.clientX;
             mouseY = e.clientY;
-        });
+        }, { passive: true });
 
         window.addEventListener('mouseleave', () => {
             mouseX = null;
@@ -387,18 +387,18 @@ document.addEventListener('DOMContentLoaded', () => {
         } else if (novaState.step === 2) {
             novaState.userData.challenge = userText;
             novaState.step = 3;
-            appendAiReply(`Understood. Addressing <em>"${userText}"</em> will unlock significant scale.<br><br>Are you looking for a custom AI automation system, a high-performance website, or a complete digital ecosystem?`);
+            appendAiReply(`Understood. Addressing <em>"${userText}"</em> will help your business grow faster.<br><br>Are you looking for an AI automation, a custom website, or a 24/7 AI chatbot?`);
         } else if (novaState.step === 3) {
             novaState.userData.solution = userText;
             novaState.step = 4;
 
-            const recommendation = `Based on your goal of <strong>${novaState.userData.topic}</strong> in <strong>${novaState.userData.businessType}</strong>, a tailored <strong>${userText}</strong> can eliminate operational friction and accelerate growth.<br><br>Would you like our team to prepare a free AI strategy audit for your idea?`;
-            const ctaBtn = `<button class="btn btn-primary cta-chat-btn" id="btn-chat-audit-trigger" style="margin-top:12px; font-size:0.85rem; padding:10px 20px; border-radius:9999px;">Book Free AI Audit</button>`;
+            const recommendation = `Based on your goal of <strong>${novaState.userData.topic}</strong> in <strong>${novaState.userData.businessType}</strong>, a tailored <strong>${userText}</strong> can save you hours of work and grow your sales.<br><br>Would you like to get a free strategy audit for your business?`;
+            const ctaBtn = `<button class="btn btn-primary cta-chat-btn" id="btn-chat-audit-trigger" style="margin-top:12px; font-size:0.85rem; padding:10px 20px; border-radius:9999px;">Get Free Audit</button>`;
             
             appendAiReply(recommendation, ctaBtn);
         } else {
-            appendAiReply(`Perfect! Your requirements have been logged.<br><br>Our founding team will review your project specs and help you plan the next steps. Click below to confirm your audit:`,
-                `<button class="btn btn-primary cta-chat-btn" id="btn-chat-audit-trigger-2" style="margin-top:12px; font-size:0.85rem; padding:10px 20px; border-radius:9999px;">Book Free AI Audit</button>`
+            appendAiReply(`Perfect! Your details are logged.<br><br>Your custom strategy breakdown and action plan are ready in minutes. Click below to see your audit:`,
+                `<button class="btn btn-primary cta-chat-btn" id="btn-chat-audit-trigger-2" style="margin-top:12px; font-size:0.85rem; padding:10px 20px; border-radius:9999px;">Get Free Audit</button>`
             );
         }
     }

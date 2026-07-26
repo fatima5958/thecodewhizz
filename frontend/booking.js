@@ -32,6 +32,7 @@ class AriaBookingModalEngine {
         // Collect all trigger buttons across the site
         const triggerSelectors = [
             '#btn-start-consultation',
+            '#btn-consultant-section-start',
             '#btn-header-audit',
             '.btn-audit',
             '.btn-consultation'

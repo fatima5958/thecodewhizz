@@ -84,7 +84,7 @@ class AriaLuxuryCursor {
 
                 // Subtle 6px pull
                 btn.style.transform = `translate3d(${distanceX * 0.18}px, ${distanceY * 0.18}px, 0)`;
-            });
+            }, { passive: true });
 
             btn.addEventListener('mouseleave', () => {
                 btn.style.transform = `translate3d(0px, 0px, 0)`;

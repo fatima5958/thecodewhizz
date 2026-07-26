@@ -25,7 +25,7 @@ class AriaNavbarEngine {
     }
 
     initSections() {
-        const ids = ['hero', 'services', 'audit', 'cases', 'comparison', 'roi-calculator', 'final-cta', 'contact'];
+        const ids = ['hero', 'process', 'services', 'build-section', 'intelligence', 'why-us', 'future-core', 'consultant', 'projects', 'audit', 'clients', 'cases', 'comparison', 'roi-calculator', 'testimonials', 'contact', 'final-cta'];
         this.sections = ids.map(id => document.getElementById(id)).filter(Boolean);
     }
 
@@ -38,7 +38,7 @@ class AriaNavbarEngine {
                 });
                 this.ticking = true;
             }
-        });
+        }, { passive: true });
 
         this.onScroll();
     }

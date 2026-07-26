@@ -221,7 +221,7 @@ class AriaBusinessAudit {
 
         // Voice Output via Aria
         if (window.ariaVoiceEngine) {
-            const speechText = `Your AI business audit is complete for your ${ind} business. We identified an automation potential of ${potential}, with an estimated ${timeSaved} saved per week.`;
+            const speechText = `Your business audit is complete. You have an automation potential of ${potential}, with an estimated ${timeSaved} saved per week.`;
             window.ariaVoiceEngine.speak(speechText);
         }
     }
@@ -240,9 +240,9 @@ class AriaBusinessAudit {
 
         if (servicesTags) {
             servicesTags.innerHTML = `
-                <span class="service-pill">AI Customer Agent</span>
-                <span class="service-pill">Workflow Automation Pipeline</span>
-                <span class="service-pill">Custom ${industry} AI Engine</span>
+                <span class="service-pill">24/7 AI Chatbot</span>
+                <span class="service-pill">AI Automation</span>
+                <span class="service-pill">Custom Website</span>
             `;
         }
     }
