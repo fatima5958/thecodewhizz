@@ -1,5 +1,5 @@
 /**
- * FRONTEND/NAVBAR.JS — Apple-Grade Luxury Navbar Engine for Aria
+ * FRONTEND/NAVBAR.JS — Apple-Grade Luxury Navbar & Fullscreen Mobile Menu Engine
  */
 
 class AriaNavbarEngine {
@@ -10,13 +10,22 @@ class AriaNavbarEngine {
         this.lastScrollY = window.scrollY;
         this.ticking = false;
 
+        // Mobile Fullscreen Navigation Elements
+        this.mobileToggle = document.getElementById('mobile-menu-toggle');
+        this.mobileOverlay = document.getElementById('mobile-nav-overlay');
+        this.mobileClose = document.getElementById('mobile-nav-close');
+        this.mobileBackdrop = document.getElementById('mobile-nav-backdrop');
+        this.mobileNavItems = document.querySelectorAll('.mobile-nav-item, .mobile-nav-cta');
+        this.isOpen = false;
+
         this.initSections();
         this.bindScrollObserver();
         this.initActiveSectionObserver();
+        this.initMobileMenu();
     }
 
     initSections() {
-        const ids = ['hero', 'services', 'audit', 'cases', 'comparison', 'roi-calculator', 'final-cta'];
+        const ids = ['hero', 'services', 'audit', 'cases', 'comparison', 'roi-calculator', 'final-cta', 'contact'];
         this.sections = ids.map(id => document.getElementById(id)).filter(Boolean);
     }
 
@@ -37,7 +46,7 @@ class AriaNavbarEngine {
     onScroll() {
         const currentScrollY = window.scrollY;
 
-        if (!this.header) return;
+        if (!this.header || this.isOpen) return;
 
         // 1. Transparent on top, Glass Blur while scrolling
         if (currentScrollY <= 20) {
@@ -79,6 +88,71 @@ class AriaNavbarEngine {
         }, { threshold: 0.3 });
 
         this.sections.forEach(sec => observer.observe(sec));
+    }
+
+    /**
+     * Fullscreen Mobile Navigation Menu Controller
+     */
+    initMobileMenu() {
+        if (this.mobileToggle) {
+            this.mobileToggle.addEventListener('click', () => this.toggleMobileMenu());
+        }
+
+        if (this.mobileClose) {
+            this.mobileClose.addEventListener('click', () => this.closeMobileMenu());
+        }
+
+        if (this.mobileBackdrop) {
+            this.mobileBackdrop.addEventListener('click', () => this.closeMobileMenu());
+        }
+
+        // Close mobile overlay on item selection
+        this.mobileNavItems.forEach(item => {
+            item.addEventListener('click', () => {
+                this.closeMobileMenu();
+            });
+        });
+
+        // ESC key listener to close menu
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && this.isOpen) {
+                this.closeMobileMenu();
+            }
+        });
+    }
+
+    toggleMobileMenu() {
+        if (this.isOpen) {
+            this.closeMobileMenu();
+        } else {
+            this.openMobileMenu();
+        }
+    }
+
+    openMobileMenu() {
+        this.isOpen = true;
+        if (this.mobileOverlay) {
+            this.mobileOverlay.classList.add('is-active');
+            this.mobileOverlay.setAttribute('aria-hidden', 'false');
+        }
+        if (this.mobileToggle) {
+            this.mobileToggle.classList.add('is-active');
+        }
+        document.body.classList.add('menu-open');
+        document.body.style.overflow = 'hidden';
+    }
+
+    closeMobileMenu() {
+        this.isOpen = false;
+        if (this.mobileOverlay) {
+            this.mobileOverlay.classList.remove('is-active');
+            this.mobileOverlay.setAttribute('aria-hidden', 'true');
+        }
+        if (this.mobileToggle) {
+            this.mobileToggle.classList.remove('is-active');
+        }
+        document.body.classList.remove('menu-open');
+        document.body.style.overflow = '';
     }
 }
 

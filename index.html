@@ -42,9 +42,45 @@
                         <path d="M6 3.5L10.5 8L6 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
                 </a>
+                
+                <!-- Mobile Hamburger Menu Button -->
+                <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle navigation menu">
+                    <span class="hamburger-bar"></span>
+                    <span class="hamburger-bar"></span>
+                    <span class="hamburger-bar"></span>
+                </button>
             </div>
         </div>
     </header>
+
+    <!-- Fullscreen Glassmorphism Mobile Menu Overlay -->
+    <div class="mobile-nav-overlay" id="mobile-nav-overlay" aria-hidden="true">
+        <div class="mobile-nav-backdrop" id="mobile-nav-backdrop"></div>
+        <div class="mobile-nav-content">
+            <div class="mobile-nav-header">
+                <span class="mobile-nav-tag">NAVIGATION // THE CODE WHIZ</span>
+                <button class="mobile-nav-close" id="mobile-nav-close" aria-label="Close menu">✕</button>
+            </div>
+            <ul class="mobile-nav-links">
+                <li><a href="#services" class="mobile-nav-item"><span>01</span> Services</a></li>
+                <li><a href="#process" class="mobile-nav-item"><span>02</span> Process & Timeline</a></li>
+                <li><a href="#audit" class="mobile-nav-item"><span>03</span> Free AI Audit</a></li>
+                <li><a href="#cases" class="mobile-nav-item"><span>04</span> Case Studies</a></li>
+                <li><a href="#roi-calculator" class="mobile-nav-item"><span>05</span> ROI Calculator</a></li>
+                <li><a href="#contact" class="mobile-nav-item"><span>06</span> Contact Us</a></li>
+            </ul>
+            <div class="mobile-nav-actions">
+                <a href="#audit" class="btn btn-primary-glow mobile-nav-cta">
+                    <span>Get Free AI Audit</span>
+                </a>
+                <div class="mobile-nav-socials">
+                    <a href="https://wa.me/923106182076" target="_blank" rel="noopener" class="social-circle-btn sm-btn" aria-label="WhatsApp">💬</a>
+                    <a href="https://instagram.com/the_codewhiz" target="_blank" rel="noopener" class="social-circle-btn sm-btn" aria-label="Instagram">📸</a>
+                    <a href="mailto:thecodewhiz.ai@gmail.com" class="social-circle-btn sm-btn" aria-label="Email">✉️</a>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- ============================================================ -->
     <!-- HERO: Cinematic Product Launch — THE CODE WHIZ // ARIA        -->

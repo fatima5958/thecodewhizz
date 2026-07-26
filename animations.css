@@ -3763,5 +3763,318 @@ button:active,
     animation: errorFadeIn 0.25s ease;
 }
 
+/* ==========================================================================
+   FULLSCREEN GLASSMORPHISM MOBILE NAVIGATION SYSTEM
+   ========================================================================== */
+
+.mobile-menu-toggle {
+    display: none;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    cursor: pointer;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    z-index: 10001;
+    transition: all 0.3s ease;
+}
+
+.hamburger-bar {
+    width: 20px;
+    height: 2px;
+    background: #FAFAFA;
+    border-radius: 2px;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.mobile-menu-toggle.is-active .hamburger-bar:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+    background: #C084FC;
+}
+
+.mobile-menu-toggle.is-active .hamburger-bar:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+}
+
+.mobile-menu-toggle.is-active .hamburger-bar:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+    background: #C084FC;
+}
+
+.mobile-nav-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.mobile-nav-overlay.is-active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.mobile-nav-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(8, 8, 12, 0.94);
+    backdrop-filter: blur(28px);
+    -webkit-backdrop-filter: blur(28px);
+}
+
+.mobile-nav-content {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 32px 24px 40px 24px;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.mobile-nav-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.mobile-nav-tag {
+    font-family: var(--font-heading);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    color: #C084FC;
+}
+
+.mobile-nav-close {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: #FAFAFA;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 1.1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.25s ease;
+}
+
+.mobile-nav-close:hover {
+    color: #C084FC;
+    border-color: rgba(192, 132, 252, 0.4);
+}
+
+.mobile-nav-links {
+    list-style: none;
+    padding: 24px 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.mobile-nav-item {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #FAFAFA;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 10px 0;
+    transition: all 0.25s ease;
+}
+
+.mobile-nav-item span {
+    font-size: 0.82rem;
+    color: #C084FC;
+    font-weight: 600;
+}
+
+.mobile-nav-item:hover {
+    color: #C084FC;
+    transform: translateX(6px);
+}
+
+.mobile-nav-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: auto;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.mobile-nav-cta {
+    width: 100%;
+    min-height: 52px;
+    border-radius: 9999px;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mobile-nav-socials {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+}
+
+@media (max-width: 991px) {
+    .nav {
+        display: none;
+    }
+    .header-actions .btn-audit {
+        display: none;
+    }
+    .mobile-menu-toggle {
+        display: flex;
+    }
+}
+
+/* ==========================================================================
+   MASTER MULTI-BREAKPOINT RESPONSIVENESS (320px to 430px, Tablet, Desktop)
+   ========================================================================== */
+
+/* 430px (iPhone 14/15/16 Pro Max, Pixel 7/8 Pro) */
+@media (max-width: 430px) {
+    .hero-title {
+        font-size: 2.1rem !important;
+        line-height: 1.2 !important;
+    }
+    .hero-subtitle {
+        font-size: 0.95rem !important;
+    }
+    .aria-circle-stage {
+        width: 250px !important;
+        height: 250px !important;
+    }
+    .hero-buttons {
+        flex-direction: column !important;
+        width: 100% !important;
+        gap: 12px !important;
+    }
+    .hero-buttons .btn {
+        width: 100% !important;
+        min-height: 48px !important;
+        justify-content: center !important;
+    }
+    .process-timeline {
+        flex-direction: column !important;
+        gap: 20px !important;
+    }
+    .timeline-card {
+        width: 100% !important;
+    }
+    .contact-form-card {
+        padding: 24px 18px !important;
+    }
+    .footer-bottom-bar {
+        flex-direction: column !important;
+        gap: 16px !important;
+        text-align: center !important;
+    }
+}
+
+/* 414px (iPhone XR / 11 / Plus series) */
+@media (max-width: 414px) {
+    .hero-title {
+        font-size: 2.0rem !important;
+    }
+    .aria-circle-stage {
+        width: 235px !important;
+        height: 235px !important;
+    }
+    .audit-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* 390px (iPhone 12 / 13 / 14 / 15 Standard) */
+@media (max-width: 390px) {
+    .hero-title {
+        font-size: 1.85rem !important;
+    }
+    .aria-circle-stage {
+        width: 220px !important;
+        height: 220px !important;
+    }
+    .audit-title, .services-title, .process-title {
+        font-size: 1.65rem !important;
+    }
+}
+
+/* 375px (iPhone SE 2nd/3rd gen) */
+@media (max-width: 375px) {
+    .hero-title {
+        font-size: 1.75rem !important;
+    }
+    .aria-circle-stage {
+        width: 200px !important;
+        height: 200px !important;
+    }
+    .contact-form-card {
+        padding: 20px 14px !important;
+    }
+}
+
+/* 360px (Standard Android Budget / Compact) */
+@media (max-width: 360px) {
+    .hero-title {
+        font-size: 1.65rem !important;
+    }
+    .aria-circle-stage {
+        width: 185px !important;
+        height: 185px !important;
+    }
+    .badge-text {
+        font-size: 0.65rem !important;
+    }
+}
+
+/* 320px (Ultra-Compact / Galaxy Fold Folded / iPhone SE 1st Gen) */
+@media (max-width: 320px) {
+    html {
+        font-size: 14px !important;
+    }
+    .hero-title {
+        font-size: 1.45rem !important;
+    }
+    .aria-circle-stage {
+        width: 165px !important;
+        height: 165px !important;
+    }
+    .contact-form-card {
+        padding: 16px 10px !important;
+    }
+    .btn {
+        padding: 12px 16px !important;
+        font-size: 0.88rem !important;
+    }
+}
+
+/* Prevent horizontal scroll globally across all viewports */
+html, body {
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
+}
+
 
 
